@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require("express");
 const mongoose=require("mongoose")
 const app = express();
-
+const userRoute = require("./routes/userRoutes");
 
 app.use(express.json())
 
@@ -25,7 +25,7 @@ dbConnection();
 const port = process.env.PORT || 5000;
 
 
-
+app.use("/users", userRoute);
 
 app.listen(port,()=>{
     console.log(`server is running 🤸🤸 ${port}`);
