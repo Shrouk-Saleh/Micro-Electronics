@@ -10,7 +10,7 @@ const ProductSchema = new mongoose.Schema({
         required: true,
     },
     stock:String,
- user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true }
+
     
 
 }, { timestamps: true })
