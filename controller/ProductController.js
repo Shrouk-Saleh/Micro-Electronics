@@ -1,5 +1,5 @@
 const Product = require("../models/Products");
-const User = require("../models/User")
+const User = require("../models/Auth")
 
 
 

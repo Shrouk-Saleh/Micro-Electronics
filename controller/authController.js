@@ -1,7 +1,7 @@
-const User = require("../models/User");
+const User = require("../models/Auth");
 const bcrypt = require("bcrypt");
 
-exports.register = async (req, res) => {
+register = async (req, res) => {
     try {
         const { Username, email, password, role } = req.body;
 
@@ -41,7 +41,7 @@ exports.register = async (req, res) => {
     }
 };
 
-exports.login = async (req, res) => {
+login = async (req, res) => {
     try {
         const { email, password } = req.body;
         if (!email || !password) {
@@ -72,3 +72,7 @@ exports.login = async (req, res) => {
         });
     }
 };
+
+module.exports={
+    register,login
+}
