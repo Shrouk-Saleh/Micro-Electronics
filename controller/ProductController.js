@@ -2,7 +2,8 @@ const Product = require("../models/Products");
 const User = require("../models/User")
 
 
-exports.addProduct = async (req, res) => {
+
+const addProduct = async (req, res) => {
     try {
         const { userId, title, price, stock } = req.body;
         const user = await User.findById(userId);
@@ -38,14 +39,10 @@ exports.addProduct = async (req, res) => {
 };
 
 
-exports.getProduct = async (req, res) => {
+
+const getProduct = async (req, res) => {
     try {
-        // const product = await Product.findOne({ title });
-        //     if (!product) {
-        //         return res.status(400).json({
-        //             msg: "product account not found"
-        //         });
-        //     }
+ 
         const product = await Product.find();
 
         res.json({
@@ -62,7 +59,8 @@ exports.getProduct = async (req, res) => {
     }
 }
 
-exports.SearchProduct = async (req, res) => {
+
+const SearchProduct = async (req, res) => {
     try {
         
     const { title } = req.query;
@@ -85,4 +83,8 @@ exports.SearchProduct = async (req, res) => {
             msg: "Server error"
         });
     }
+}
+
+module.exports={
+   addProduct, getProduct,SearchProduct
 }

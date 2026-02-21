@@ -5,6 +5,5 @@ const { addProduct,getProduct,SearchProduct } = require("../controller/ProductCo
 
 router.post("/addProduct", addProduct);
 router.get("/getProduct", getProduct);
-
 router.get("/SearchProduct", SearchProduct);
 module.exports = router;
